@@ -1,0 +1,146 @@
+.job-position {
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.job-position-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.job-position-header .company-logo {
+    display: flex;
+}
+
+.job-position-header .company-logo img {
+    max-width: 75px;
+    width: 100%;
+    max-height: 75px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.job-position-header .company-logo.no-logo img {
+    border: 1px solid #ddd;
+    background: #ccc;
+}
+
+.job-position-header span.view-details-btn {
+    padding: 10px 15px;
+    border: 1px solid #0080ff;
+    border-radius: 6px;
+}
+
+.job-position h3 {
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.job-position p {
+    line-height: 30px;
+}
+
+.job-position p i {
+    margin-right: 7px;
+    font-size: 17px;
+}
+
+.job-position p span {
+    font-weight: 500;
+}
+
+.job-position p.description {
+    height: 95px;
+    margin: 15px 0;
+    display: block !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.job-position a.apply-now-btn {
+    padding: 10px 15px;
+    margin-top: 5px;
+    display: inline-block;
+    border-radius: 6px;
+    background: #0080ff;
+    color: #fff;
+    font-weight: 500;
+}
+
+.job-position.job-details {
+    box-shadow: none;
+    padding-top: 0;
+}
+
+.job-position.job-position.job-details .job-position-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 25px;
+}
+
+.job-position.job-position.job-details p.description {
+    height: auto;
+    display: block;
+    overflow: initial;
+}
+
+.job-position.job-position.job-details p.how-to-apply {
+    padding-top: 25px;
+    font-size: 18px;
+}
+
+.filters {
+    display: flex;
+    margin: 0 20px 30px;
+}
+
+.filters .type {
+    margin-right: 30px;
+}
+
+.filters label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+.filters select {
+    height: 35px;
+    width: 200px;
+}
+
+.no-results-found {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+
+@media(max-width: 585px) {
+    .job-position {
+        position: relative;
+    }
+
+    .job-position-header {
+        display: block;
+    }
+
+    .job-position span.view-details-btn {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters .type {
+        margin: 0 0 30px 0;
+    }
+
+    .filters select {
+        width: 95%;
+    }
+}
