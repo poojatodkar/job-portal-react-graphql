@@ -698,7 +698,7 @@ const root = {
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('root route');
+    res.render('index');
 });
 
 app.use(express.static(path.join(__dirname, 'client/build')));
