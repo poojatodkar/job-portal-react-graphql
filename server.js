@@ -696,6 +696,10 @@ const root = {
 // Create an express server and a GraphQL endpoint
 const app = express();
 
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
 app.use('/graphql', cors(), express_graphql({
     schema: schema,
     rootValue: root,
