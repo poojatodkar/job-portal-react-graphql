@@ -697,23 +697,15 @@ const root = {
 // Create an express server and a GraphQL endpoint
 const app = express();
 
-app.get('/', (req, res) => {
-    res.render('index');
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-//production mode
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, 'client/build')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname+'/client/public/index.html'));
-    });
-}
 
 app.use('/graphql', cors(), express_graphql({
     schema: schema,
     rootValue: root,
     graphiql: true
 }));
-app.listen(process.env.PORT || 4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
+app.listen(process.env.port || 4000, () => console.log('Express GraphQL Server Now Running On localhost:4000/graphql'));
