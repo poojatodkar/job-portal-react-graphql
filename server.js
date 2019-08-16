@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require("path");
 const cors = require('cors');
 const express_graphql = require('express-graphql');
 const { buildSchema } = require('graphql');
@@ -697,7 +696,19 @@ const root = {
 // Create an express server and a GraphQL endpoint
 const app = express();
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public/index.html')));
+app.get('/', (req, res) => {
+    res.send('root route');
+});
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+//production mode
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname+'/client/public/index.html'));
+    });
+}
 
 app.use('/graphql', cors(), express_graphql({
     schema: schema,
