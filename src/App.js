@@ -2,8 +2,8 @@ import React from 'react';
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import JobPositions from './JobPositions/JobPositionList';
-import JobPositionDetail from './JobPositions/JobPositionDetail';
+import Products from './Products/ProductList';
+import JobPositionDetail from './Products/ProductDetail';
 import PageNotFound from './PageNotFound/PageNotFound';
 import './App.css';
 
@@ -15,7 +15,7 @@ const App = () => (
   <ApolloProvider client={client}>
     <Router>
       <Switch>
-        <Route exact path='/' component={JobPositions} />
+        <Route exact path='/' component={Products} />
         <Route path='/job/:id' component={JobPositionDetail} />
         <Route path='*' component={PageNotFound} />
       </Switch>

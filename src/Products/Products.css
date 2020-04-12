@@ -1,19 +1,31 @@
-.job-position {
-    padding: 25px;
+@import '~antd/dist/antd.css';
+
+.product-list {
+    display: block; 
+    color: #606c71;
+}
+
+.product-list:hover,
+.product-list:focus {
+    color: #606c71;
+}
+
+.products {
+    padding: 15px 25px;
     margin-bottom: 25px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.job-position-header {
+.products-header {
     display: flex;
     justify-content: space-between;
 }
 
-.job-position-header .company-logo {
+.products-header .image {
     display: flex;
 }
 
-.job-position-header .company-logo img {
+.products-header .image img {
     max-width: 75px;
     width: 100%;
     max-height: 75px;
@@ -21,39 +33,45 @@
     margin-right: 15px;
 }
 
-.job-position-header .company-logo.no-logo img {
+.products-header .image.no-logo img {
     border: 1px solid #ddd;
     background: #ccc;
 }
 
-.job-position-header span.view-details-btn {
+.products-header span.view-details-btn {
     padding: 10px 15px;
-    border: 1px solid #0080ff;
-    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.job-position h3 {
+.products h3 {
     line-height: 30px;
     font-size: 20px;
     font-weight: 500;
 }
 
-.job-position p {
+.products p {
+    margin: 0;
     line-height: 30px;
 }
 
-.job-position p i {
+.products p i {
     margin-right: 7px;
     font-size: 17px;
 }
 
-.job-position p span {
+.products p.details {
     font-weight: 500;
 }
 
-.job-position p.description {
-    height: 95px;
-    margin: 15px 0;
+.products p.details span {
+    font-weight: normal;
+}
+
+.products p.description {
     display: block !important;
     overflow: hidden;
     display: -webkit-box;
@@ -61,33 +79,23 @@
     -webkit-box-orient: vertical;
 }
 
-.job-position a.apply-now-btn {
-    padding: 10px 15px;
-    margin-top: 5px;
-    display: inline-block;
-    border-radius: 6px;
-    background: #0080ff;
-    color: #fff;
-    font-weight: 500;
-}
-
-.job-position.job-details {
+.products.product-details {
     box-shadow: none;
     padding-top: 0;
 }
 
-.job-position.job-position.job-details .job-position-header {
+.products.products.product-details .products-header {
     border-bottom: 1px solid #ddd;
     padding-bottom: 25px;
 }
 
-.job-position.job-position.job-details p.description {
+.products.products.product-details p.description {
     height: auto;
     display: block;
     overflow: initial;
 }
 
-.job-position.job-position.job-details p.how-to-apply {
+.products.products.product-details p.how-to-apply {
     padding-top: 25px;
     font-size: 18px;
 }
@@ -118,18 +126,20 @@
 }
 
 @media(max-width: 585px) {
-    .job-position {
+    .products {
         position: relative;
     }
 
-    .job-position-header {
+    .products-header {
         display: block;
     }
 
-    .job-position span.view-details-btn {
-        position: absolute;
-        right: 25px;
-        bottom: 25px;
+    .products-header a {
+        display: block;
+    }
+
+    .products span.view-details-btn {
+        margin-top: 15px;
     }
 
     .filters {
